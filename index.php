@@ -1,5 +1,5 @@
 <?php
-    include_once "includes/connection.php";
+    include_once "Application_main/Scripts/PHP/includes/connection.php";
 ?>
 
 <html lang="pt-br">
@@ -10,8 +10,8 @@
         <meta charset="UTF-8">
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-        <link rel="stylesheet" href="../CSS/style.css" type="text/css">
-        <link rel="stylesheet" href="../CSS/boostrap-plus.css" type="text/css">
+        <link rel="stylesheet" href="Application_main/Scripts/CSS/style.css" type="text/css">
+        <link rel="stylesheet" href="Application_main/Scripts/CSS/boostrap-plus.css" type="text/css">
         <!-- endregion -->
 
         <title>CMS Editor</title>
