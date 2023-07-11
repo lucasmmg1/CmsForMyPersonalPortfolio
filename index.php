@@ -1,5 +1,6 @@
 <?php
     include_once "Application_main/Scripts/PHP/includes/connection.php";
+    include_once "Application_main/Scripts/PHP/includes/login.php";
 ?>
 
 <html lang="pt-br">
