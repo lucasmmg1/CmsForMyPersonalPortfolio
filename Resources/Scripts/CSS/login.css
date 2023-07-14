@@ -1,0 +1,60 @@
+@media (max-width: 375px)
+{
+}
+@media (min-width: 375px)
+{
+}
+@media (min-width: 428px)
+{
+}
+@media (min-width: 575px)
+{
+}
+@media (min-width: 700px)
+{
+}
+@media (min-width: 830px)
+{
+}
+@media (min-width: 992px)
+{
+    #LoginPNL
+    {
+        width: 30% !important;
+        height: 65% !important;
+    }
+}
+@media (min-width: 1200px)
+{
+    #LoginPNL
+    {
+        width: 30% !important;
+        height: 65% !important;
+    }
+}
+@media (min-width: 1920px)
+{
+    #LoginPNL
+    {
+        width: 30% !important;
+        height: 65% !important;
+    }
+}
+
+input
+{
+    border: none !important;
+}
+h5
+{
+    font-size: 1rem !important;
+}
+h6
+{
+    font-size: 0.83rem !important;
+}
+
+#LoginPNL
+{
+    margin: auto !important;
+}
