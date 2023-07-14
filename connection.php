@@ -1,6 +1,8 @@
 <?php
 
-    $hostname = "localhost";
+    # $hostname = "localhost";
+    # $hostname = "192.168.0.175";
+    $hostname = "189.100.12.58";
     $dbname = "cms";
     $username = "root";
     $password = "119948b642a772402e9872798a119948b642a772402e9872789a";
@@ -14,7 +16,7 @@
         PDO::ATTR_EMULATE_PREPARES   => false
     ];
 
-    $dsn = "mysql:host=$hostname;dbname=$dbname;charset=$charset;port=$port";
+    $dsn = "mysql:host=$hostname:$port;dbname=$dbname;charset=$charset";
 
     try
     {
