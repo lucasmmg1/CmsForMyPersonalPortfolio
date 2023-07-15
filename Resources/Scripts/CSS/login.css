@@ -18,19 +18,9 @@
 }
 @media (min-width: 992px)
 {
-    #LoginPNL
-    {
-        width: 30% !important;
-        height: 65% !important;
-    }
 }
 @media (min-width: 1200px)
 {
-    #LoginPNL
-    {
-        width: 30% !important;
-        height: 65% !important;
-    }
 }
 @media (min-width: 1920px)
 {
@@ -52,9 +42,4 @@ h5
 h6
 {
     font-size: 0.83rem !important;
-}
-
-#LoginPNL
-{
-    margin: auto !important;
 }

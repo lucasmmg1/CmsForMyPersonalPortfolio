@@ -39,6 +39,10 @@ button
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.bgcolor_nocolor
+{
+  background-color: transparent !important;
+}
 .bgcolor_F1F1F1
 {
   background-color: #F1F1F1 !important;
@@ -52,6 +56,11 @@ button
   background-color: #111111 !important;
 }
 
+.brcolor_f3f7f7
+{
+  border-color: #f3f7f7 !important;
+}
+
 .tmpcolor_111111
 {
   color: #111111 !important;
@@ -59,6 +68,14 @@ button
 .tmpcolor_8d8d8d
 {
   color: #8d8d8d !important;
+}
+.tmpcolor_ed4337
+{
+  color: #ed4337 !important;
+}
+.tmpcolor_f3f7f7
+{
+  color: #f3f7f7 !important;
 }
 
 @font-face

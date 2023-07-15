@@ -1,29 +1,26 @@
 <?php
     include_once "connection.php";
-    include_once "login.php";
+    $conn = new connection("189.100.12.58", "cms", "root", "119948b642a772402e9872798a119948b642a772402e9872789a", "3306", "utf8");
+
+    if (isset($_SESSION["logged_in"]))
+    {
+        readfile("navbar.html");
+        if (isset($_POST["logout"]))
+            $conn->Logout();
+    }
+    else
+    {
+        readfile("login.html");
+        if (isset($_POST["login"]))
+            $conn->Login();
+
+        $error = $conn->GetError();
+        if (isset($error))
+        {
+            $errorElementClasses = "w-100 h-50 text-center fst-italic SansationRegular tmpcolor_ed4337";
+            $errorElement = "<h6 class='" . $errorElementClasses . "'>" . addslashes($error) . "</h6>";
+            $errorScript = "<script>document.getElementById('footer').innerHTML += `$errorElement`;</script>";
+            echo $errorScript;
+        }
+    }
 ?>
-
-<html lang="pt-br">
-
-    <head>
-
-        <!-- region Meta Tags -->
-        <meta charset="UTF-8">
-
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-        <link rel="stylesheet" href="Resources/Scripts/CSS/style.css" type="text/css">
-        <link rel="stylesheet" href="Resources/Scripts/CSS/boostrap-plus.css" type="text/css">
-        <!-- endregion -->
-
-        <title>CMS Editor</title>
-
-    </head>
-
-    <body>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    </body>
-
-</html>
