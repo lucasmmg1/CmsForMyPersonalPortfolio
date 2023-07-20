@@ -1,6 +1,6 @@
 <?php
     include_once "connection.php";
-    $conn = new connection("189.100.12.58", "cms", "root", "119948b642a772402e9872798a119948b642a772402e9872789a", "3306", "utf8");
+    $conn = new connection("189.100.12.58", "dashboard", "root", "119948b642a772402e9872798a119948b642a772402e9872789a", "3306", "utf8");
 
     if (isset($_SESSION["logged_in"]))
     {
