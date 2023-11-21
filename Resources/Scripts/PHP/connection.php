@@ -1,12 +1,12 @@
 <?php
-
     session_start();
 
+    #[AllowDynamicProperties]
     class connection
     {
         private $dsn, $pdo, $error;
 
-        public function __construct(string $hostname, string $dbname, string $username, string $password, string $port, string $charset)
+        public function __construct(readonly string $hostname, readonly string $dbname, readonly string $username, readonly string $password, readonly string $port, readonly string $charset)
         {
             $this->dsn = "mysql:host=$hostname:$port;dbname=$dbname;charset=$charset";
 
@@ -23,15 +23,15 @@
             }
             catch (PDOException $e)
             {
-                die("Error ". $e->getCode() . ":  " . $e->getMessage());
+                die("Error {$e->getCode()}: {$e->getMessage()}");
             }
         }
         public function __destruct()
         {
-            $this->pdo = null;
+            $this->dsn = $this->pdo = null;
         }
 
-        public function Login(): void
+        public function Login() : void
         {
             if (isset($_POST['username'], $_POST['password']))
             {
@@ -59,6 +59,7 @@
                     if ($foundWithUsername > 0 || $foundWithEmail > 0)
                     {
                         $_SESSION['logged_in'] = true;
+                        $_SESSION['username'] = $this->pdo->query("SELECT username FROM users WHERE username = '$username' OR email = '$username'" )->fetch()["username"];
                         header("Location: index.php");
                         exit();
                     }
@@ -69,11 +70,18 @@
                 }
             }
         }
-        public function Logout(): void
+        public function Logout() : void
         {
-            echo "<script> console.log('Here'); </script>";
             session_destroy();
             header("Location: index.php");
+            exit();
+        }
+
+        public function Query(string $query)
+        {
+            $stmt = $this->pdo->prepare($query);
+            $stmt->execute();
+            return $stmt;
         }
 
         public function GetError()
