@@ -2,7 +2,7 @@ $(document).ready(function()
 {
     $.ajax
     ({
-        url: "Resources/Scripts/PHP/RetrieveProfilePicture.php",
+        url: "Application_Main/Scripts/PHP/RetrieveProfilePicture.php",
         method: "GET",
         success: function (data)
         {
@@ -30,7 +30,7 @@ $(document).ready(function()
 
         $.ajax
         ({
-            url: "Resources/Scripts/PHP/UploadProfilePicture.php",
+            url: "Application_Main/Scripts/PHP/UploadProfilePicture.php",
             type: "POST",
             data: formData,
             contentType: false,
