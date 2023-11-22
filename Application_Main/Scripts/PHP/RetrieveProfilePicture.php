@@ -1,6 +1,8 @@
 <?php
+    include_once "Application_Main/Scripts/PHP/Database.php";
+
     $query = "SELECT image FROM users WHERE username = '".$_SESSION['username']."'";
-    $result = $conn->Query($query);
+    $result = Database::GetConnection()->Query($query);
     if ($result && $result->rowCount() > 0)
     {
         $row = $result->fetch(PDO::FETCH_ASSOC);

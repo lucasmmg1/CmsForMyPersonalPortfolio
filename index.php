@@ -1,12 +1,11 @@
 <?php
-    global $conn;
-    include_once "Application_Main/Scripts/PHP/db_connection.php";
+    include_once "Application_Main/Scripts/PHP/Database.php";
 
     if (isset($_POST["logout"]))
-        $conn->Logout();
+        Database::GetConnection()->Logout();
 
     if (isset($_POST["login"]))
-        $conn->Login();
+        Database::GetConnection()->Login();
 
     if (isset($_SESSION["logged_in"]))
     {

@@ -1,4 +1,6 @@
 <?php
+    include_once "Application_Main/Scripts/PHP/Database.php";
+
     if ($_SERVER["REQUEST_METHOD"] === "POST")
     {
         if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK)
@@ -11,7 +13,7 @@
             $file_contents = addslashes($file_contents);
 
             $query = "UPDATE users SET image = '$file_contents' WHERE username = '".$_SESSION['username']."'";
-            $result = $conn->Query($query);
+            $result = Database::GetConnection()->Query($query);
 
             if ($result) {
                 $response = array(
