@@ -1,5 +1,5 @@
 <?php
-    include_once "Application_Main/Scripts/PHP/Database.php";
+    include_once "Database.php";
 
     if (isset($_POST["logout"]))
         Database::GetConnection()->Logout();

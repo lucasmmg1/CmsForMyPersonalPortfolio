@@ -1,5 +1,5 @@
 <?php
-    include_once "Application_Main/Scripts/PHP/Database.php";
+    include_once "Database.php";
 
     $query = "SELECT image FROM users WHERE username = '".$_SESSION['username']."'";
     $result = Database::GetConnection()->Query($query);
