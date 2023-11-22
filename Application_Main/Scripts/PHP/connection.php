@@ -1,14 +1,12 @@
 <?php
-    session_start();
-
     #[AllowDynamicProperties]
     class connection
     {
-        private $dsn, $pdo, $error;
+        public $pdo, $error;
 
         public function __construct(readonly string $hostname, readonly string $dbname, readonly string $username, readonly string $password, readonly string $port, readonly string $charset)
         {
-            $this->dsn = "mysql:host=$hostname:$port;dbname=$dbname;charset=$charset";
+            $dsn = "mysql:host=$hostname:$port;dbname=$dbname;charset=$charset";
 
             $options =
             [
@@ -19,16 +17,12 @@
 
             try
             {
-                $this->pdo = new PDO($this->dsn, $username, $password, $options);
+                $this->pdo = new PDO($dsn, $username, $password, $options);
             }
             catch (PDOException $e)
             {
                 die("Error {$e->getCode()}: {$e->getMessage()}");
             }
-        }
-        public function __destruct()
-        {
-            $this->dsn = $this->pdo = null;
         }
 
         public function Login() : void
@@ -82,11 +76,6 @@
             $stmt = $this->pdo->prepare($query);
             $stmt->execute();
             return $stmt;
-        }
-
-        public function GetError()
-        {
-            return $this->error;
         }
     }
 ?>
