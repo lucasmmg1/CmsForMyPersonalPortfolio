@@ -41,7 +41,7 @@
     {
         readfile("Application_Main/Scripts/HTML/login.html");
 
-        $error = $conn->error;
+        $error = Database::GetConnection()->error;
         if (isset($error))
         {
             $errorElementClasses = "w-100 h-50 text-center fst-italic SansationRegular tmpcolor_ed4337";
